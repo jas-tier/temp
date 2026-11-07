@@ -11,6 +11,7 @@
 | Windows デスクトップ PC（既存） | 必須 | HA の公式 VM 手順の最小リソースは**メモリ 2 GB・2 vCPU**。UEFI が必要。仕様と常時稼働の可否は未確認（質問 Q4） |
 | 仮想化ソフト | 必須（無償で可） | VirtualBox、VMware Workstation、Hyper-V のいずれか。USB を VM に渡すなら VirtualBox か VMware（Hyper-V は USB 未対応） |
 | ネットワーク | 必須 | VM はブリッジ接続。VMware の手順は有線 Ethernet 前提。VirtualBox は Wi-Fi アダプタも選択可だが、Cast の発見が安定するかは**要検証** |
+| Mac（任意・HA の VM の代替ホスト） | 任意 | 公式の macOS 向け手順がある。VirtualBox（Intel 用と Apple silicon 用のイメージが別）、最小 2 GB・2 vCPU、UEFI、ブリッジ接続。VirtualBox が使えない Mac では UTM も案内されている。常時稼働にできるか（スリープの扱い）は公式ページに記載がなく**未確認**。機種・チップは質問 Q8 |
 | Bluetooth ドングル | 任意 | SwitchBot の Bluetooth 連携（Bot・カーテン・センサーなど）を使う場合のみ。IR 家電は Cloud 連携で足りるため不要 |
 | SwitchBot Hub | 必須（既存） | Cloud 連携に必要。モデルは未確認（質問 Q5） |
 | iPhone・iPad mini（既存） | 任意 | HA の管理と、パネル用途の候補 |
@@ -32,7 +33,7 @@
 | 機材・ソフト | 内容 | 根拠 |
 |---|---|---|
 | データ通信対応の USB ケーブル | 充電専用ケーブルは不可。端子の形状は未確認（質問 Q2） | 【確認済】TECHO5 の文書 |
-| 作業用 PC | TECHO5 は Windows・Linux・macOS に対応。Python 3、adb、fastboot、git が必要。shareXDA- は Windows、Python 3、pyserial、keystone-engine、MediaTek の USB ドライバを使う | 【確認済】TECHO5 / 【報告】shareXDA- |
+| 作業用 PC | TECHO5 のインストール工程は Windows・Linux・macOS に対応。Python 3、adb、fastboot、git が必要。**アンロック工程を Mac でできるかは未確認**（02 の 2-8）。shareXDA- は Windows、Python 3、pyserial、keystone-engine、MediaTek の USB ドライバを使う | 【確認済】TECHO5 / 【報告】shareXDA- |
 | バックアップ用の空き容量 | 約 4 GB 以上。PC 以外にも保管する | 【確認済】TECHO5 |
 | 安定した電源 | 本体を AC に接続し、書き込み中は抜かない | 【確認済】TECHO5 |
 | 取得するファイルの出所と SHA-256 | amazon-oss は公式かどうか不明のため、必ず突き合わせる | 【未確認】 |

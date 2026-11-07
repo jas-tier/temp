@@ -36,6 +36,8 @@ HA を入れる前の土台。すでに使えていれば、何も変えない�
 
 最小リソースは、メモリ 2 GB、2 vCPU。UEFI が必要。
 
+**Mac で行う場合**は、公式の macOS 向けページ（https://www.home-assistant.io/installation/macos ）に従う。手順は同じ VirtualBox で、Intel 用と Apple silicon 用のイメージが別になる。Apple silicon（M1〜M4）では、OS Version を Oracle Linux (ARM 64-bit) にし、ストレージのコントローラは SATA ではなく VirtioSCSI になる。VirtualBox が使えない Mac では UTM も案内されている（公式は、仮想マシンに慣れている人向けとしている）。常時稼働にできるか（スリープの扱い）は公式ページに記載がなく、**未確認**。
+
 1. 公式の Windows 向けページ（https://www.home-assistant.io/installation/windows）から、VirtualBox 用のイメージ（.vdi）をダウンロードして、展開する（zip の場合）。
 2. VirtualBox で「New（新規）」を選ぶ。
    - Name: `Home Assistant`

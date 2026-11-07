@@ -87,7 +87,20 @@ TECHO5（Alpine Linux、Android なし）の athena 版: 画面、タッチ、�
 | G5 | 本体を AC 電源に接続し、作業中は抜かない運用 | 未実施 |
 | G6 | 復旧手順の机上確認（`08_recovery_guide.md` の作成） | 未着手 |
 
-### 2-8 参考: Echo Show 5（第2世代・cronos）向けの記事との違い
+### 2-8 作業用コンピュータの OS（Mac でできるか）
+
+| 工程 | Windows | Linux | macOS | 根拠 |
+|---|---|---|---|---|
+| インストール工程（TECHO5 の `install-athena.py`） | 可 | 可 | **可** | 【確認済】TECHO5 getting-started の対応表（3 OS とも Yes）。Python 3・adb・fastboot・git が必要。macOS は `xcode-select --install` のあと `brew install android-platform-tools` |
+| アンロック工程（saiyaku-athena） | 記載なし | 記載なし | **記載なし（未確認）** | TECHO5 の文書は athena のアンロックに使う OS を書いていない。XDA の原文は未読 |
+
+- 参考（athena ではない機種）: TECHO5 は、Show 5（amonet）のアンロックについて、macOS では「Linux のライブ USB を使う」と案内し、macOS の節に「amonet の BootROM の手順には Linux が必要」と書いている。一方、Spot のアンロックは Apple silicon の Mac から直接できたと、1台での検証として書いている。
+- athena のアンロックも、MediaTek の BootROM を使う手法とされる（shareXDA- は「MediaTek USB VCOM / PreLoader」を使い、TECHO5 は復旧にも mtkclient を使うと書く）。そのため、**Mac でアンロックできるかは保証できない**。これは類推であり、確認ではない。
+- issue #10 の報告者のホストは macOS（platform-tools 37.0.0）。ただし、アンロック工程を Mac で行ったかは書かれていない。
+- shareXDA- の手順は Windows（Linux は小さなパス修正で可）が前提で、macOS の記載はない。旧ビルドから上げる経路が中心で、7082 の端末には前半は不要と思われる【推定】。
+- **暫定方針**: 改造に進む場合、インストール工程は Mac でも可。アンロック工程は、Windows PC か Linux（ライブ USB）で行う前提で準備する。最終判断は、XDA の原文を確認するゲート G1 で行う。
+
+### 2-9 参考: Echo Show 5（第2世代・cronos）向けの記事との違い
 
 個人ブログ「Calm tempo」の記事（2026-09-15、同 9-21 更新）は、**Echo Show 5 第2世代（2021、cronos）**を LineageOS 化する手順を紹介している。【確認済】本文
 
