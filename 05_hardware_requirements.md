@@ -15,9 +15,9 @@
 | SwitchBot Hub | 必須（既存） | Cloud 連携に必要。モデルは未確認（質問 Q5） |
 | iPhone・iPad mini（既存） | 任意 | HA の管理と、パネル用途の候補 |
 | PC の消費電力計測 | 任意 | 既存の SwitchBot Plug Mini があれば、消費電力を HA で見られる（公式ページに記載）。常時稼働の電気代を把握する用 |
-| Home Assistant Cloud | 任意（有料） | Nest Hub へのダッシュボード Cast に必要（HTTPS 要件）。金額は未取得 |
+| Home Assistant Cloud | **対象外**（有料） | 無料の範囲では使わない。Nest Hub へのダッシュボード Cast は行わない |
 
-## 2. 構成C に移行する場合（購入が必要）
+## 2. 構成C（購入が必要。無料の範囲では対象外）
 
 | 機材 | 内容 |
 |---|---|

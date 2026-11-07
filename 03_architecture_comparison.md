@@ -82,12 +82,32 @@
 | 外部公開 URL の作成 | 依頼書の共通要件に反する |
 | Docker Desktop 上の HA Container | 公式の Windows ページに手順がなく、Container 版は「アプリ」も使えない |
 
+## 3-2. 無料の範囲での確定方針（2026-11-07 ユーザー指示）
+
+「無料の範囲で進める」の指示を受け、次のとおり確定する。
+
+| 項目 | 方針 |
+|---|---|
+| 構成 | B（既存の Windows PC + HA の VM）。A は土台として維持 |
+| 有料・購入 | 対象外（Home Assistant Cloud、Raspberry Pi、Home Assistant Green、外部公開 URL） |
+| Nest Hub | HA ダッシュボードの Cast は使わない。標準の Google Home 操作 + HA からの音声通知（`tts.speak`）。静止画の表示（`media_player.play_media`）は必要になったら試す |
+| 表示用パネル | iPad mini（既存）のブラウザで HA を開く案を検証する。専用アプリは未調査 |
+| Echo Show 8 | 現状維持または標準機能の範囲。改造は 02 のゲートと明示的な承認が出るまで実行しない |
+| 外部公開 | しない |
+
+無料の範囲での制約:
+
+- SwitchBot の IR 家電は Cloud 連携のみ（クラウド依存、状態は推定値）。
+- ロボット掃除機や人感・開閉センサーなど、Webhook が必要な機器は更新を受け取れない（HA がインターネットから到達できないため）。
+- Google Translate の TTS は非公式のエンジンで、インターネット接続が必要。将来使えなくなる可能性がある。
+- 設定手順は [06_setup_guide.md](06_setup_guide.md)、復旧は [08_recovery_guide.md](08_recovery_guide.md)（いずれもドラフト・未実施）。
+
 ## 4. 構成を切り替える条件
 
 | 状況 | 判断 |
 |---|---|
-| PC を 24 時間つけておけない | 構成 C（専用機）へ移行。購入前に最新価格を再見積 |
-| Nest Hub への Cast ダッシュボードが必須 | Home Assistant Cloud の採用をユーザーに諮る |
+| PC を 24 時間つけておけない | 無料の範囲では専用機を買わず、構成 A に戻す。専用機（構成 C）は、購入の判断を改めてユーザーに諮り、最新価格を再見積する |
+| Nest Hub への Cast ダッシュボードが必須 | Home Assistant Cloud（有料）が必要。無料の範囲では対象外のため、必要になった時点で改めてユーザーに諮る |
 | HA が役に立たない | 構成 A に戻す（VM を削除） |
 
 ## 出典

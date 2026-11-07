@@ -93,7 +93,7 @@ TECHO5（Alpine Linux、Android なし）の athena 版: 画面、タッチ、�
 
 - Home Assistant 独自の Cast アプリで、Chromecast 系端末に HA の画面を表示できる。`cast.show_lovelace_view` アクションか、ダッシュボードの Cast エンティティ行から使う。
 - **要件**: 「Home Assistant の `https://` でのアクセスが必要。Home Assistant Cloud を使う場合は設定不要。それ以外は `external_url` の設定が必要」。
-- 影響: ローカルの http のみの構成では、HA Cast の表示は使えない。**HTTPS で外部から到達できる URL を用意する**（依頼書の「外部公開ポートは原則作らない」と衝突する）か、**Home Assistant Cloud（有料）を使う**かのどちらかになる。Cloud の料金は未取得（公式ページで要確認）。
+- 影響: ローカルの http のみの構成では、HA Cast の表示は使えない。**HTTPS で外部から到達できる URL を用意する**（依頼書の「外部公開ポートは原則作らない」と衝突する）か、**Home Assistant Cloud（有料）を使う**かのどちらかになる。Cloud の料金は未取得（公式ページで要確認）。**無料の範囲（2026-11-07 のユーザー指示）では HA Cast は使わない**（03 参照）。
 - **タッチ操作の可否は公式ページに記載がない。** 実機検証項目とする。
 
 ### 3-2 音声通知・メディア再生【確認済】

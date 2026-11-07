@@ -13,9 +13,21 @@
 | [03_architecture_comparison.md](03_architecture_comparison.md) | 構成比較・費用・推奨構成 | 作成済（費用の一部は未確認） |
 | [04_implementation_plan.md](04_implementation_plan.md) | 段階別実装計画 | 作成済（**計画のみ。未実施**） |
 | [05_hardware_requirements.md](05_hardware_requirements.md) | 必要機材 | 作成済 |
-| 06_setup_guide.md | 設定・構築手順 | **未着手**（実装フェーズで作成） |
+| [06_setup_guide.md](06_setup_guide.md) | 設定・構築手順（無料の範囲） | **ドラフト作成済・未実施・未検証**（公式ページに基づく） |
 | 07_validation_report.md | 動作検証結果 | **未着手**（検証を実施するまで作成しない） |
-| 08_recovery_guide.md | バックアップ・復旧手順 | **未着手**（実装フェーズで作成） |
+| [08_recovery_guide.md](08_recovery_guide.md) | バックアップ・復旧手順 | **ドラフト作成済・未実施・未検証**（復元テスト未実施） |
+
+## 決定事項
+
+| 日付 | 内容 |
+|---|---|
+| 2026-11-07 | ユーザー指示「**無料の範囲で進める**」。追加購入なし・有料サービスなし。構成 B（既存の Windows PC に Home Assistant の VM）で進める前提とし、変更があれば知らせてもらう。 |
+
+無料の範囲での扱い:
+
+- **対象外**: Home Assistant Cloud（有料）、Raspberry Pi、Home Assistant Green、外部公開 URL。
+- **Nest Hub**: HA のダッシュボード Cast（HTTPS 必須）は使わない。代わりに、標準の Google Home 操作と、HA からの音声通知（`tts.speak`）を使う。
+- **Echo Show 8**: 現状維持または標準機能の範囲。**改造は、02 のゲート G0〜G6 とユーザーの明示的な承認が出るまで実行しない**（「無料の範囲」の指示は、書き込みの承認ではない）。
 
 ## 情報の確度（全文書共通の凡例）
 
