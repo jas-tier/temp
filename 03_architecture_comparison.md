@@ -12,9 +12,9 @@
 - Nest Hub: Google Home + SwitchBot の Google 連携で操作する。
 - SwitchBot Hub の機能（シーン、IR 家電）をそのまま使う。
 
-### 構成B: Windows PC + Home Assistant（VM）
+### 構成B: 既存 PC（Mac または Windows）+ Home Assistant（VM）
 
-- Windows PC 上の VM（VirtualBox、VMware Workstation、Hyper-V）で Home Assistant OS を動かす。
+- 既存 PC 上の VM で Home Assistant OS を動かす。Windows は VirtualBox・VMware Workstation・Hyper-V、Mac は VirtualBox（Apple silicon 用イメージあり）か UTM。**稼働先の PC は未確定**（[09](09_environment_diagnosis.md) の比較後に決める）。
 - SwitchBot は Cloud 連携（IR 家電用）と、必要なら Bluetooth 連携（Bot・カーテン・センサー用）を併用する。
 - Nest Hub: 音声通知、標準の Google Home 操作。ダッシュボード表示は HTTPS 要件を満たす場合のみ。
 - Echo Show 8: 当面は現状維持。改造は別ゲート（04 の Phase 7）。
@@ -50,7 +50,7 @@
 
 ## 3. 推奨構成（1つ）
 
-**構成B を段階導入する。構成A は、土台としてそのまま維持する。**
+**構成B を段階導入する。構成A は、土台としてそのまま維持する。** ただし、**稼働先の PC（Mac か Windows か）は、診断（[09](09_environment_diagnosis.md)）の比較が終わるまで確定しない。**
 
 ### 理由
 
@@ -88,7 +88,7 @@
 
 | 項目 | 方針 |
 |---|---|
-| 構成 | B（既存の Windows PC + HA の VM）。A は土台として維持 |
+| 構成 | B（既存 PC 上の HA の VM）。**どの PC か（Mac か Windows か）は、診断結果の比較が終わるまで確定しない**（09）。A は土台として維持 |
 | 有料・購入 | 対象外（Home Assistant Cloud、Raspberry Pi、Home Assistant Green、外部公開 URL） |
 | Nest Hub | HA ダッシュボードの Cast は使わない。標準の Google Home 操作 + HA からの音声通知（`tts.speak`）。静止画の表示（`media_player.play_media`）は必要になったら試す |
 | 表示用パネル | iPad mini（既存）のブラウザで HA を開く案を検証する。専用アプリは未調査 |
@@ -101,6 +101,15 @@
 - ロボット掃除機や人感・開閉センサーなど、Webhook が必要な機器は更新を受け取れない（HA がインターネットから到達できないため）。
 - Google Translate の TTS は非公式のエンジンで、インターネット接続が必要。将来使えなくなる可能性がある。
 - 設定手順は [06_setup_guide.md](06_setup_guide.md)、復旧は [08_recovery_guide.md](08_recovery_guide.md)（いずれもドラフト・未実施）。
+
+## 3-3. Echo Show 8 の改造不要の活用方法（評価）
+
+| 方法 | 内容 | 状態 |
+|---|---|---|
+| 現状維持 | Alexa・タイマー・フォトフレームを使い続ける | リスクなし |
+| Alexa の標準機能 | SwitchBot の Alexa 連携で、本体のタッチと音声から家電を操作する。ルーティンでシーンを実行する | 【検索要約】Hub Mini は、Echo Show から音声で赤外線家電を操作できるとされる。Hub 2 でも同様と考えられるが、**未確認** |
+| Silk ブラウザで HA を表示 | 「Silk Browser を開いて」と話しかけ、HA の URL を表示する | 【検索要約】Silk は Echo Show 8 の標準ブラウザ。**古い投稿では、数分（4〜5 分）でホーム画面に戻る**という報告がある（openHAB コミュニティ）。現行の挙動と Alexa+ の影響は**未確認**。常時表示の用途には不向きな可能性があり、実機で検証する |
+| 他の端末をパネルにする | iPad mini などのブラウザで HA を表示する | 手順は 06 の 9 章。専用アプリは未調査 |
 
 ## 4. 構成を切り替える条件
 

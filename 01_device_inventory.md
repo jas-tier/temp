@@ -64,6 +64,8 @@
 ## C. SwitchBot（未調査）
 
 - 機種、Hub 構成、Hub のモデル（Hub Mini か、Hub 2 / Hub 3 か）、登録済みの IR 家電は未調査。
+- ユーザーの申告: 過去のネットワーク図に **Hub 2** の記載がある。図は私からは見えず、**現在の構成かどうかも【未確認】**。
+- Hub 2 について（公式ページ）: Home Assistant の SwitchBot Cloud 連携では、Hub 2 自体は「センサー値（温度・湿度）の取得のみ」で、Hub 2 の制御は未対応。一方、Hub 経由の IR 家電は、ON/OFF とエアコンの温度・モード変更ができる。ダッシュボードの室温表示には、Hub 2 のセンサー値が使える可能性がある。【確認済】
 - Home Assistant 連携の可否は Hub のモデルと機器種別で変わる（02 の「SwitchBot」節）。**質問 Q5 の回答が必要。**
 
 ## D. ネットワーク（未検証）
@@ -74,8 +76,12 @@
 
 ## E. PC・その他の端末
 
-- Windows デスクトップ PC（仕様・常時稼働の可否は未確認）。
-- Mac（2026-11-07 のユーザーの質問で言及。台帳には未登録だった。機種・チップ・macOS のバージョン・常時稼働の可否は**未確認**。質問 Q8）。
+| 端末 | 仕様（ユーザー提供） | 未確認 |
+|---|---|---|
+| Mac | MacBook Pro、Apple M3 Pro、RAM 18 GB | macOS のバージョン、ストレージの空き、常時稼働の可否、ネットワーク |
+| Windows デスクトップ | Intel Core i7-10700K、RAM 32 GB、RTX 5060 Ti 16 GB、MSI MEG Z490I UNIFY、SSD・HDD | OS のバージョンとエディション、稼働状況、BIOS の仮想化設定、ネットワーク |
+
+- 未確認項目は、診断スクリプト（[09_environment_diagnosis.md](09_environment_diagnosis.md)）で取得する。**HA の稼働先は、Mac と Windows の比較が終わるまで確定しない。**
 - iPhone、iPad mini。
 - Raspberry Pi は未所有。
 
@@ -86,11 +92,11 @@
 | Q1 | 本体の「端末情報」に表示される Software version・Fire OS・ビルドの現在値 | ビルド 7082 の再照合 |
 | Q2 | Echo Show 8 の背面 USB ポートの形状 | ケーブルの要否・選定 |
 | Q3 | Echo Show 8 を今オフラインにしてよいか（フォトフレーム・タイマーが止まる） | OTA で手法が使えなくなる可能性を避けるため |
-| Q4 | Windows PC の OS エディション（Home / Pro）、RAM、常時稼働の可否、有線か Wi-Fi か | VM 稼働の可否 |
+| Q4 | Windows PC の OS エディション（Home / Pro）、常時稼働の可否、有線か Wi-Fi か（CPU・RAM・GPU は回答済み） | VM 稼働の可否。**診断スクリプトで取得**（09） |
 | Q5 | SwitchBot の機種一覧と Hub のモデル | 連携方式の決定 |
 | Q6 | ~~Home Assistant Cloud（有料）を使ってよいか~~ | **回答済み**: 2026-11-07「無料の範囲で進める」→ 使わない |
 | Q7 | 使いたい操作の優先順位（照明、エアコン、テレビ、シーン） | ダッシュボード設計 |
-| Q8 | Mac の機種・チップ（Apple silicon か Intel）・macOS のバージョン・常時稼働にできるか | HA の VM や作業用コンピュータとして使えるか |
+| Q8 | Mac の macOS のバージョン・常時稼働にできるか（機種・チップ・RAM は回答済み: MacBook Pro / M3 Pro / 18 GB） | HA の VM や作業用コンピュータとして使えるか。**診断スクリプトで取得**（09） |
 
 ## 出典
 

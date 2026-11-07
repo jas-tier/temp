@@ -19,7 +19,7 @@
 - [ ] Echo Show 8 の端末情報の表示（Software version、Fire OS、ビルド）
 - [ ] Echo Show 8 背面の USB ポートの形状（改造しない場合は不要）
 - [ ] SwitchBot アプリの機器一覧と、Hub のモデル（Hub Mini か、Hub 2 / Hub 3 か）
-- [ ] Windows PC の OS エディション（Home / Pro）、RAM、常時稼働にできるか、有線か Wi-Fi か
+- [ ] Mac と Windows の診断結果（[09](09_environment_diagnosis.md) のスクリプトを実行）。**稼働先が確定するまで、3 章に進まない**
 - [ ] PC の BIOS / UEFI で仮想化支援機能が有効か
 
 ## 2. 構成A（標準連携）の確認
