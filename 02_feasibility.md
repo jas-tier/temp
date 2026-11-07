@@ -87,6 +87,21 @@ TECHO5（Alpine Linux、Android なし）の athena 版: 画面、タッチ、�
 | G5 | 本体を AC 電源に接続し、作業中は抜かない運用 | 未実施 |
 | G6 | 復旧手順の机上確認（`08_recovery_guide.md` の作成） | 未着手 |
 
+### 2-8 参考: Echo Show 5（第2世代・cronos）向けの記事との違い
+
+個人ブログ「Calm tempo」の記事（2026-09-15、同 9-21 更新）は、**Echo Show 5 第2世代（2021、cronos）**を LineageOS 化する手順を紹介している。【確認済】本文
+
+| 項目 | 記事（Echo Show 5 第2世代） | ユーザーの端末（Echo Show 8 第2世代） |
+|---|---|---|
+| コードネーム | cronos | athena |
+| アンロックの道具 | amonet-cronos v2.0.1（fastboot モードで実行）。記事の手順では、音量＋・－とミュートを押しながら電源を入れる | saiyaku-athena（1.1.x）。**別の道具・別の手順** |
+| ROM | LineageOS 18.1 for Echo Show 5 (2021) | R0rt1z2 の LineageOS 18.1（athena）など。**機種専用で互換性はない** |
+| 本体の条件 | 記事は「バージョンによってできるできないがあるかもしれない」とだけ書き、要件の記載はない | ビルドの条件がある（2-1 を参照） |
+
+- **この記事の手順は、ユーザーの Echo Show 8 には適用しない**（依頼書の「Echo Show 5 向けの改造手順を適用しない」に従う）。道具も ROM も機種専用で、取り違えると文鎮化の恐れがある。
+- 記事は「この版から Fire OS のバックアップは不要になったようだ」と書くが、本計画では**バックアップを必須**とする方針を変えない（TECHO5 と shareXDA- の文書もバックアップを前提にしている）。
+- 記事の筆者は、Raspberry Pi の値上がりで購入を断念し、Echo Show 5 をスマートホームの「サーバとダッシュボード」に使っているという。何を動かしているかは書かれておらず、**Home Assistant を動かしているとは確認できない**。記事は Echo Show 5 を「ストレージ 8GB・メモリ 1GB」としている。Home Assistant の公式インストールページは、Raspberry Pi で最小 2 GB の RAM を挙げている。
+
 ## 3. Google Nest Hub H1A
 
 ### 3-1 Home Assistant Cast（ダッシュボード表示）【確認済】公式ページ
@@ -173,4 +188,5 @@ TECHO5（Alpine Linux、Android なし）の athena 版: 画面、タッチ、�
 - amazon-oss リリース: https://github.com/amazon-oss/releases/releases/tag/lineage-18.1-athena-v0.1
 - shareXDA-: https://github.com/EdwilsonPereira/shareXDA-
 - Hackaday（古い情報）: https://hackaday.com/2026/01/02/jailbreaking-the-amazon-echo-show
+- Echo Show 5 第2世代の LineageOS 化の記事（個人ブログ。Echo Show 8 には適用しない）: https://calmtempo.com/2026/09/amazon-echo-show5/
 - SwitchBot Hub Mini の連携（検索要約）: https://kaden.watch.impress.co.jp/docs/news/1563921.html
